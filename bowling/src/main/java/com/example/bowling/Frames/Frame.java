@@ -1,23 +1,45 @@
 package com.example.bowling.Frames;
 
+import com.example.bowling.Calculable;
 import com.example.bowling.Roll.Roll;
 
-public class Frame {
+public abstract class Frame implements Calculable {
 
-    private Roll firstRole;
-    private Roll secondRoll;
+    private Roll firstRoll;
+
     private int score;
 
-    public Frame(Roll firstRoll, Roll secondRoll){
-        this.firstRole = firstRoll;
+    private Roll secondRoll;
+
+    Frame(Roll firstRoll, Roll secondRoll){
+        this.firstRoll = firstRoll;
         this.secondRoll = secondRoll;
     }
 
-    public boolean isStrike(){
-        return false;
+    public abstract boolean isStrike();
+
+    public abstract boolean isSpare();
+
+
+    public int getScore() {
+        return score;
     }
 
-    public boolean isSpare(){
-        return false;
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+
+    private Roll getSecondRoll(){
+        return this.secondRoll;
+    }
+
+    public Roll getFirstRoll(){
+        return this.firstRoll;
+    }
+
+    @Override
+    public int calculate() {
+        return this.getFirstRoll().getNumberOfPins() + this.getSecondRoll().getNumberOfPins();
     }
 }

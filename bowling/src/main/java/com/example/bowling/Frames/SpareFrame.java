@@ -2,10 +2,15 @@ package com.example.bowling.Frames;
 
 import com.example.bowling.Roll.Roll;
 
-public class Spare extends Frame {
+public class SpareFrame extends Frame {
 
-    public Spare(int frameNumber, Roll firstRoll, Roll secondRoll) {
+    SpareFrame(Roll firstRoll, Roll secondRoll) {
         super(firstRoll, secondRoll);
+    }
+
+    @Override
+    public boolean isStrike() {
+        return false;
     }
 
     @Override

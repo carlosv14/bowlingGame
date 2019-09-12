@@ -11,10 +11,6 @@ import java.util.stream.Stream;
 @Service
 public class RollFileParser implements FileParser<Roll> {
 
-    public RollFileParser(){
-
-    }
-
     @Override
     public Stream<Roll> getAllData(String fileName) throws IOException {
         return Files.lines(Paths.get(fileName))
