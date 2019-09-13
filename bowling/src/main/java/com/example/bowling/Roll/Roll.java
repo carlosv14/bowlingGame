@@ -1,6 +1,6 @@
 package com.example.bowling.Roll;
 
-import com.example.bowling.Calculable;
+import java.util.regex.Pattern;
 
 public class Roll {
 
@@ -18,5 +18,12 @@ public class Roll {
 
     public String getPlayerName() {
         return playerName;
+    }
+
+    void validateRoll() throws Exception{
+        boolean isValid = this.numberOfPins.matches("[0-9]|0[1-9]|10|F");
+        if (!isValid){
+            throw new Exception(this.numberOfPins + " knocked down pins for " + this.playerName + " is incorrect, acceptable numbers are: 0-10 or F for foul");
+        }
     }
 }
