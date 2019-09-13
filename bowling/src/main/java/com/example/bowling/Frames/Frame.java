@@ -1,9 +1,8 @@
 package com.example.bowling.Frames;
 
-import com.example.bowling.Calculable;
 import com.example.bowling.Roll.Roll;
 
-public abstract class Frame implements Calculable {
+public abstract class Frame {
 
     private Roll firstRoll;
 
@@ -30,7 +29,7 @@ public abstract class Frame implements Calculable {
     }
 
 
-    private Roll getSecondRoll(){
+    public Roll getSecondRoll(){
         return this.secondRoll;
     }
 
@@ -38,7 +37,8 @@ public abstract class Frame implements Calculable {
         return this.firstRoll;
     }
 
-    @Override
+    public abstract String getFrameResult();
+
     public int calculate() {
         return this.getFirstRoll().getNumberOfPins() + this.getSecondRoll().getNumberOfPins();
     }

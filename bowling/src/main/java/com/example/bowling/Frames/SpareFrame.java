@@ -17,4 +17,9 @@ public class SpareFrame extends Frame {
     public boolean isSpare() {
         return true;
     }
+
+    @Override
+    public String getFrameResult() {
+        return this.getFirstRoll().getNumberOfPins() + "\t/";
+    }
 }

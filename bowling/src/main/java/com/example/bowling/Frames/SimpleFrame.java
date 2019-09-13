@@ -17,4 +17,10 @@ public class SimpleFrame extends Frame {
     public boolean isSpare() {
         return false;
     }
+
+    @Override
+    public String getFrameResult() {
+        return this.getFirstRoll().getNumberOfPins() + "\t" + this.getSecondRoll().getNumberOfPins();
+    }
+
 }

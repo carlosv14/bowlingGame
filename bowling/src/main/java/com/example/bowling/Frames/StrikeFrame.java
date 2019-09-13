@@ -17,4 +17,9 @@ public class StrikeFrame extends Frame {
     public boolean isSpare() {
         return false;
     }
+
+    @Override
+    public String getFrameResult() {
+        return  "\tX";
+    }
 }
